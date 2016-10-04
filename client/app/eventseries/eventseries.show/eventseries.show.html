@@ -1,0 +1,63 @@
+<md-card ng-init="vm.GetData()" style="min-width: 600px">
+  <md-toolbar class="md-primary" layout="row" layout-align="space-between center">
+    <div class="md-toolbar-tools">{{vm.EventSeries.name}}</div>
+    <div><md-button class="md-icon-button" ng-click="vm.Close()">
+      <i class="material-icons">close</i>
+    </md-button></div>
+  </md-toolbar>
+  <md-card-content>
+    <md-toolbar class="md-primary md-hue-1" layout="row" layout-align="space-between center">
+      <div class="md-toolbar-tools">General</div>
+      <div><md-button class="md-icon-button" ng-click="vm.GeneralVisible = !vm.GeneralVisible">
+        <i class="material-icons" ng-show="vm.GeneralVisible">expand_more</i>
+        <i class="material-icons" ng-show="!vm.GeneralVisible">chevron_left</i>
+      </md-button></div>
+    </md-toolbar>
+    <md-content layout="column" ng-show="vm.GeneralVisible">
+      <form name="eventSeriesGeneralForm" layout="column" >
+        <md-input-container>
+          <label>Event Name</label>
+          <input name="name" type="text" ng-model="vm.EventSeries.name" required ng-readonly="!vm.GeneralEdit">
+        </md-input-container>
+        <md-input-container>
+          <label>Host Name</label>
+          <input name="host" type="text" ng-model="vm.EventSeries.eventHost" required ng-readonly="!vm.GeneralEdit">
+        </md-input-container>
+      </form>
+    </md-content>
+  </md-card-content>
+
+  <md-card-content>
+    <md-toolbar class="md-primary md-hue-1" layout="row" layout-align="space-between center">
+      <div class="md-toolbar-tools">Events</div>
+      <div><md-button class="md-icon-button" ng-click="vm.EventsVisible = !vm.EventsVisible">
+        <i class="material-icons" ng-show="vm.EventsVisible">expand_more</i>
+        <i class="material-icons" ng-show="!vm.EventsVisible">chevron_left</i>
+      </md-button></div>
+    </md-toolbar>
+    <md-content layout="column" ng-show="vm.EventsVisible">
+      <div ng-repeat="event in vm.Events" layout="column">
+        <div layout="row">
+          <md-input-container>
+            <label>Location</label>
+            <input type="text" ng-model="event.placeDescription" readonly>
+          </md-input-container>
+          <md-input-container>
+            <label>Starts</label>
+            <input value="{{ event.utcTime | date:'h : mm a' }}" readonly>
+          </md-input-container>
+          <md-input-container>
+            <label>Date</label>
+            <input value="{{ event.utcTime | date:'d MMMM yyyy'}}" readonly>
+          </md-input-container>
+        </div>
+        <div layout="column" layout-align="center end">
+          <md-button class="raised" ng-click="vm.ShowSmsSender(event)">Send Message</md-button>
+        </div>
+      </div>
+      <md-content ng-show="vm.canSendSms">
+        <event-sms-sender event="vm.selectedEvent" canSendSms="vm.canSendSms"></event-sms-sender>
+      </md-content>
+    </md-content>
+  </md-card-content>
+</md-card>

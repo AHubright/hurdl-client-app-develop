@@ -1,0 +1,88 @@
+# Development
+-
+  environment:
+    environment: dev
+  version: 1.0.{build}
+  branches:
+    only:
+      - develop
+
+  init:
+    - git config --global core.autocrlf input
+    - git config --global user.email "developers@acklenavenue.com"
+    - git config --global user.name "Developers"
+
+  install:
+    - npm -g install npm@2.14.7
+    - set PATH=%APPDATA%\npm;%PATH%
+    - npm install --global bower gulp
+    - npm install
+    - bower install
+
+  build_script:
+    - gulp build
+
+  cache:
+    - cached_folder -> cache-version.txt
+    - node_modules
+    - bower_components
+
+  deploy_script:
+    - gulp zip-frontend
+    - gulp deploy
+
+  matrix:
+    fast_finish: true
+
+  notifications:
+    - provider: Webhook
+      url: http://appharborservicehookendpoint.apphb.com/build/appveyor/limeball
+
+  artifacts:
+    - path: deploy\hurdlclient.zip
+      name: HurdlClient
+
+#Staging
+-
+  environment:
+    environment: staging
+  version: 1.0.{build}
+  branches:
+    only:
+      - staging
+
+  init:
+    - git config --global core.autocrlf input
+    - git config --global user.email "developers@acklenavenue.com"
+    - git config --global user.name "Developers"
+
+  install:
+    - npm -g install npm@2.14.7
+    - set PATH=%APPDATA%\npm;%PATH%
+    - npm install --global bower gulp
+    - npm install
+    - bower install
+
+  build_script:
+    - gulp build
+
+  cache:
+    - cached_folder -> cache-version.txt
+    - node_modules
+    - bower_components
+
+
+  deploy_script:
+    - gulp zip-frontend
+    - gulp deploy
+
+  matrix:
+    fast_finish: true
+
+  notifications:
+    - provider: Webhook
+      url: http://appharborservicehookendpoint.apphb.com/build/appveyor/limeball
+
+  artifacts:
+    - path: deploy\hurdlclient.zip
+      name: HurdlClient

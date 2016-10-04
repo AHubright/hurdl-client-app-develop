@@ -1,0 +1,122 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <base href="/">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(client) app/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/src/autocomplete.css" />
+  <link rel="stylesheet" href="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.css" />
+  <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+  <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+  <link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.css" />
+  <link rel="stylesheet" href="bower_components/select2/select2.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+  <link rel="stylesheet" href="bower_components/angular-material-icons/angular-material-icons.css" />
+  <link rel="stylesheet" href="bower_components/mdPickers/dist/mdPickers.min.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css({.tmp,client}) app/app.css -->
+  <link rel="stylesheet" href="app/app.css">
+
+  <!-- injector:css -->
+  <!-- endinjector -->
+  <!-- endbuild -->
+</head>
+
+<body ng-app="falconApp" layout="column" ng-cloak>
+  <!--[if lt IE 7]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+  <toolbar></toolbar>
+  <!-- Add your site or application content here -->
+  <div flex layout="row">
+    <sidebar></sidebar>
+    <md-content flex id="content">
+      <div ui-view=""></div>
+    </md-content>
+  </div>
+
+  <!-- Google places API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBZOSWY40lguDsD3hATG942t3GcBoYrws&libraries=places"></script>
+
+  <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+  <!-- build:js({client,node_modules}) app/vendor.js -->
+  <!-- bower:js -->
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-google-places-autocomplete/src/autocomplete.js"></script>
+  <script src="bower_components/angular-google-places-autocomplete/dist/autocomplete.min.js"></script>
+  <script src="bower_components/toastr/toastr.js"></script>
+  <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+  <script src="bower_components/angular-ui-select/dist/select.js"></script>
+  <script src="bower_components/auth0.js/build/auth0.js"></script>
+  <script src="bower_components/auth0-angular/build/auth0-angular.js"></script>
+  <script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
+  <script src="bower_components/ng-tags-input/ng-tags-input.js"></script>
+  <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+  <script src="bower_components/select2/select2.js"></script>
+  <script src="bower_components/angular-select2/dist/angular-select2.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+  <script src="bower_components/angular-material-icons/angular-material-icons.min.js"></script>
+  <script src="bower_components/angularUtils-pagination/dirPagination.js"></script>
+  <script src="bower_components/mdPickers/dist/mdPickers.min.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:js({.tmp,client}) app/app.js -->
+  <script src="app/app.js"></script>
+  <!-- injector:js -->
+  <script src="components/util/util.module.js"></script>
+  <script src="app/app.constant.js"></script>
+  <script src="app/constantService/constantService.service.js"></script>
+  <script src="app/event/eventService/eventService.service.js"></script>
+  <script src="app/event/eventSmsSender/eventSmsSender.controller.js"></script>
+  <script src="app/event/eventSmsSender/eventSmsSender.js"></script>
+  <script src="app/eventseries/eventseries.index/eventseries.index.controller.js"></script>
+  <script src="app/eventseries/eventseries.index/eventseries.index.js"></script>
+  <script src="app/eventseries/eventseries.show/eventseries.show.controller.js"></script>
+  <script src="app/eventseries/eventseries.show/eventseries.show.js"></script>
+  <script src="app/eventseries/eventseriesService/eventseriesService.service.js"></script>
+  <script src="app/googleplacesparser/googleplacesparser.service.js"></script>
+  <script src="app/httpQ/httpQ.service.js"></script>
+  <script src="app/logger/logger.service.js"></script>
+  <script src="app/login/login.controller.js"></script>
+  <script src="app/login/login.js"></script>
+  <script src="components/footer/footer.directive.js"></script>
+  <script src="components/modal/modal.service.js"></script>
+  <script src="components/sidebar/sidebar.controller.js"></script>
+  <script src="components/sidebar/sidebar.directive.js"></script>
+  <script src="components/util/util.service.js"></script>
+  <!-- endinjector -->
+  <!-- endbuild -->
+</body>
+
+</html>

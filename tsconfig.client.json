@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "sourceMap": true,
+        "rootDir": "./client",
+        "outDir": ".tmp",
+        "target": "ES5"
+    },
+    "filesGlob": [
+        "client/{app,components}/**/!(*.spec).ts",
+        "typings/main.d.ts"
+    ],
+    "files": [
+        "client/app/app.ts",
+        "client/app/constantService/constantService.service.ts",
+        "client/app/event/eventService/eventService.service.ts",
+        "client/app/event/eventSmsSender/eventSmsSender.controller.ts",
+        "client/app/event/eventSmsSender/eventSmsSender.ts",
+        "client/app/eventseries/eventseries.index/eventseries.index.controller.ts",
+        "client/app/eventseries/eventseries.index/eventseries.index.ts",
+        "client/app/eventseries/eventseries.show/eventseries.show.controller.ts",
+        "client/app/eventseries/eventseries.show/eventseries.show.ts",
+        "client/app/eventseries/eventseriesService/eventseriesService.service.ts",
+        "client/app/googleplacesparser/googleplacesparser.service.ts",
+        "client/app/httpQ/httpQ.service.ts",
+        "client/app/logger/logger.service.ts",
+        "client/app/login/login.controller.ts",
+        "client/app/login/login.ts",
+        "client/components/footer/footer.directive.ts",
+        "client/components/modal/modal.service.ts",
+        "client/components/sidebar/sidebar.controller.ts",
+        "client/components/sidebar/sidebar.directive.ts",
+        "client/components/util/util.module.ts",
+        "client/components/util/util.service.ts",
+        "typings/main.d.ts"
+        ]
+
+}

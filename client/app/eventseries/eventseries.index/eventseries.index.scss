@@ -1,0 +1,39 @@
+.eventseries {
+  h2 {
+    display: block;
+    margin: 0 auto;
+  }
+  .search {
+    input {
+      display: inline;
+      width: 95%;
+    }
+  }
+  .events {
+    margin-top: 20px;
+    table {
+      table-layout: fixed;
+      width: 99%;
+      margin: 0 auto;
+      text-align: left;
+      border-collapse: separate;
+      border-spacing: 0 5px;
+      word-wrap: break-word;
+      th,
+      td {
+        height: 45px;
+        padding: 5px;
+      }
+      th {
+        background-color: #002e42;
+        color: white;
+        font-size: 20px;
+        font-weight: normal;
+      }
+      td {
+        background-color: white;
+        font-size: 18px;
+      }
+    }
+  }
+}

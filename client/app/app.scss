@@ -1,0 +1,87 @@
+body,
+.content {
+  width: 100%;
+  height: 100%;
+}
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.grid {
+  width: 600px;
+  height: 450px;
+}
+.ng-scope {
+  height: 100%;
+}
+//Pagination Style
+.pagination-control {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+  .pagination {
+    ul,
+    li {
+      display: inline-block;;
+      width: 35px;
+      background-color:  #424242;
+      padding: 0px;
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 18px;
+      color: white;
+      a {
+        display: block;
+        text-decoration: none;
+        color: white;
+      }
+      &.active {
+        background-color: white;
+        a {
+          color: #424242;
+        }
+      }
+    }
+    ul {
+      list-style: none;
+    }
+  }
+}
+
+div[g-places-autocomplete-drawer] {
+    width: 1px;
+    height: 1px;
+    > div {
+      height: 100px;
+    }
+}
+
+.underlinedTitle {
+  border-bottom: 2px solid #dedede;
+  margin-bottom: 20px;
+}
+
+#searchIcon input[name="autocompleteField"]  {
+  background: url(http://glamourshots-albums.com/assets/themes/default/images/search.icon.png);
+  background-repeat: no-repeat;
+  background-position:  7px;
+  padding: 0px 35px;
+}
+
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+// Component styles are injected through grunt
+/* inject:scss */
+@import 'event/eventSmsSender/eventSmsSender';
+@import 'eventseries/eventseries.index/eventseries.index';
+@import 'eventseries/eventseries.show/eventseries.show';
+@import 'login/login';
+@import 'palette';
+@import '../components/footer/footer';
+@import '../components/modal/modal';
+@import '../components/sidebar/sidebar';
+/* endinject */

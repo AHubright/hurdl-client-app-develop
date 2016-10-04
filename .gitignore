@@ -1,0 +1,16 @@
+node_modules
+public
+.tmp
+.sass-cache
+.idea
+client/bower_components
+dist
+/server/config/local.env.js
+npm-debug.log
+coverage
+typings
+*.orig
+client/app/**/*.js
+client/app/**/*.js.map
+client/app/**/*.spec.js
+*.DS_Store

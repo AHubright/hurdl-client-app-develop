@@ -1,0 +1,42 @@
+<md-content class="eventseries" ng-init="vm.GetEventsSeries()">
+  <md-toolbar layout="row" layout-align="center center">
+    <div class="md-toolbar-tools">
+      <h2 class="text-center">
+        <span>Event Series</span>
+      </h2>
+    </div>
+  </md-toolbar>
+  <md-card class="search">
+    <md-autocomplete id="searchIcon" md-input-name="autocompleteField" md-selected-item="vm.selectedEvent" md-search-text="vm.SearchText"
+                     md-items="item in vm.QuerySearch(vm.SearchText)" md-item-text="item.name" placeholder="Search the event...">
+      <md-item-template>
+        <span md-highlight-text="vm.searchText" md-highlight-flags="^i">{{ item.name }}</span>
+      </md-item-template>
+      <md-not-found>
+        No event series were found.
+      </md-not-found>
+    </md-autocomplete>
+  </md-card>
+  <md-table-container class="events">
+    <table>
+      <thead>
+      <tr md-row>
+        <th md-column>Event Series Name</th>
+        <th md-column>Event Series Host</th>
+        <th md-column>Sms Number</th>
+        <th md-column>Locations</th>
+      </tr>
+      </thead>
+      <tbody md-body>
+      <tr md-row dir-paginate="event in vm.eventSeriesService.GetEventSeriesList() | filter:{name : vm.SearchText}  | itemsPerPage: 10 | orderBy:'name'">
+        <td md-cell><a ui-sref="eventSeriesShow({ id : event.id})"> {{ event.name }} </a></td>
+        <td md-cell>{{ event.eventHost }}</td>
+        <td md-cell>{{ event.eventIdentifier }}</td>
+        <td md-cell>{{ event.locations }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </md-table-container>
+
+  <dir-pagination-controls class="pagination-control" boundary-links="true"></dir-pagination-controls>
+</md-content>

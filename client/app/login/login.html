@@ -1,0 +1,30 @@
+<form name="vm.form" id="form" novalidate>
+  <div layout="row" layout-align="space-around center" style="min-height: 100vh; min-width: 100vh;">
+    <div layout="column" style="min-width: 50vh;">
+      <img src="../../assets/images/hurdl_logo.png" class="md-card-image" alt="image caption">
+      <p>Hi! Welcome to <a href="http://hurdl.com">hurdl</a>! Login in using the account information that was provided via email.</p>
+      <a>Didn't get an email?</a>
+    </div>
+    <div layout="column" style="min-width: 50vh;">
+      <div layout="column" layout-align="column stretch">
+        <md-input-container>
+          <label>Email</label>
+          <input type="email" ng-model="vm.email" ng-required="true">
+        </md-input-container>
+        <md-input-container>
+          <label>Password</label>
+          <input type="password" ng-model="vm.password" ng-required="true">
+        </md-input-container>
+      </div>
+      <div layout="row" layout-align="space-between center">
+        <md-checkbox aria-label="Checkbox No Ink" ng-model="vm.rememberMe" class="md-primary">Remember me</md-checkbox>
+        <a style="padding-bottom: 10px;">Forgot Password?</a>
+      </div>
+      <div layout="row" layout-align="end center">
+        <md-button ng-disabled="vm.form.$invalid" type="submit" class="md-raised" ng-click="vm.Login()">GO</md-button>
+      </div>
+    </div>
+
+  </div>
+
+</form>

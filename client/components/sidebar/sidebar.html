@@ -1,0 +1,24 @@
+<md-sidenav class="md-sidenav-left sidebar" md-component-id="left" md-is-locked-open="$mdMedia('min-width: 1000px')" ng-show="isAuthenticated">
+  <md-toolbar layout="column" layout-align="center center">
+    <div class="md-toolbar-tools" layout="column" layout-align="center center">
+      <h2 class="text-center">
+        <span>Client App</span>
+      </h2>
+    </div>
+    <div layout="column" layout-align="center center">
+
+    </div>
+  </md-toolbar>
+  <md-content layout-padding="">
+    <md-list>
+        <md-list-item>
+          <i class="material-icons"> date_range </i>
+          <a ui-sref="eventseriesindex">Event Series</a>
+        </md-list-item>
+      <md-list-item>
+        <i class="material-icons" ng-click="vm.logout()"> exit_to_app </i>
+        <a ng-click="vm.logout()"> Logout </a>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-sidenav>

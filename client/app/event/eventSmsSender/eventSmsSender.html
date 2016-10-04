@@ -1,0 +1,15 @@
+<form autocomplete="off" name="vm.form" id="form" novalidate>
+  <div>
+    <h2 class="underlinedTitle">Send message to  {{ vm.event.placeDescription }}</h2>
+  </div>
+  <div layout="column" layout-align="center stretch">
+    <md-input-container>
+      <label>Message</label>
+      <input ng-model="vm.message" ng-required="true">
+    </md-input-container>
+  </div>
+
+  <div layout="row" layout-align="end center">
+    <md-button ng-disabled="vm.form.$invalid" type="submit" class="md-raised" ng-click="vm.SendSms()">Send</md-button>
+  </div>
+</form>
